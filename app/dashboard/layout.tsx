@@ -22,6 +22,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
+import { Logo } from "@/components/logo";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface NavItem {
@@ -186,21 +187,11 @@ function SidebarContent({
         {/* Logo + name */}
         <Link
           href="/dashboard"
-          className={`flex items-center gap-2.5 group min-w-0 ${
+          className={`flex items-center min-w-0 ${
             isCollapsed ? "" : "flex-1"
           }`}
         >
-          {/* Logo icon */}
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-500 via-indigo-500 to-blue-500 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:opacity-90 transition-opacity">
-            <Zap className="w-4 h-4 text-white fill-white" />
-          </div>
-
-          {!isCollapsed && (
-            <span className="text-[15px] font-bold text-slate-800 dark:text-white leading-none truncate">
-              SecondMind
-              <span className="text-indigo-500 dark:text-indigo-400">.ai</span>
-            </span>
-          )}
+          <Logo iconOnly={isCollapsed} size="sm" />
         </Link>
 
         {/* Collapse toggle */}

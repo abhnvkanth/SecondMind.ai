@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { insforge } from "@/lib/insforge";
+import { Logo } from "@/components/logo";
 import { useAuth } from "@/components/auth-provider";
 
 type AuthMode = "credentials" | "phone";
@@ -153,15 +154,8 @@ export default function SignIn() {
       <div className="w-full max-w-md glass-premium rounded-3xl p-8 sm:p-10 relative z-10 shadow-2xl shadow-purple-950/20 border border-white/5">
         {/* Brand/Logo Header */}
         <div className="flex flex-col items-center mb-8">
-          <Link href="/" className="flex items-center space-x-2.5 group mb-4">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-blue-500 flex items-center justify-center shadow-lg shadow-purple-900/40 group-hover:scale-105 transition-transform duration-300">
-              <svg className="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-purple-400 transition-colors duration-300">
-              SecondMind<span className="text-purple-500">.ai</span>
-            </span>
+          <Link href="/" className="group mb-4">
+            <Logo />
           </Link>
           <h2 className="text-xl font-bold text-white tracking-tight">Welcome Back</h2>
           <p className="text-slate-400 text-xs mt-1.5 text-center">
